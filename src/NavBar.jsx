@@ -1,14 +1,40 @@
+import './styles/App.css';
 import gsap from 'gsap';
+import React, { useRef } from 'react';
 
-function NavItem({ link, item}){
+function NavItem({ link, item }) {
+    const itemRef = useRef(null);
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        gsap.fromTo(
+            itemRef.current,
+            {
+                scale: 1,
+                y: 0,
+            },
+            {
+                scale: 1.2,
+                y: -5,
+                duration: 0.3,
+                }
+        )
+    };
 
     return (
-        <a href={link}>{item}</a>
+        <a
+            className='nav-item'
+            href={link}
+            ref={itemRef}
+            onClick={handleClick}
+        >
+            {item}
+        </a>
     );
 }
 
-function NavBar(){
-    return(
+function NavBar() {
+    return (
         <header>
             <nav>
                 <NavItem link="#home" item="Accueil" />
@@ -17,7 +43,7 @@ function NavBar(){
                 <NavItem link="#contact" item="Contact" />
             </nav>
         </header>
-    )
+    );
 }
 
 export default NavBar;

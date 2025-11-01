@@ -3,3 +3,11 @@
     height:100%;
     display:flex;
 }
+
+.moving-cross{
+    transform-origin: center;
+    position:absolute;
+    top:3%;
+    left:-15%;
+    z-index:-5;
+}

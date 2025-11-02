@@ -1,6 +1,7 @@
 import "./styles/App.css";
 import "./styles/MainPage.css";
-import MovingCross from "./components/MovingCross";
+import MovingCrossViolet from "./components/MovingCrossViolet";
+import MovingCrossYellow from "./components/MovingCrossYellow";
 import Button from "./components/Button";
 import gsap from "gsap";
 import { useRef, useEffect } from "react";
@@ -9,14 +10,16 @@ import { SplitText } from "gsap/all";
 function MainPage() {
   const titleRef = useRef(null);
 
-  useEffect(() => {
-    let split = SplitText.create(".welcome-bloc h1", {type: "words"});
+  const spanRef = useRef(null);
 
-    gsap.from(split.words, {
-      duration: 1,
-      y: -100,
+  useEffect(() => {
+    let split = SplitText.create(".welcome-bloc h1", {type: "chars"});
+
+    gsap.from(split.chars, {
+      duration: 0.4,
+      y: -30,
       autoAlpha: 0, 
-      stagger: 0.1,
+      stagger: 0.3,
     });
     
   })
@@ -24,18 +27,18 @@ function MainPage() {
   return (
     <>
       <section id="home" className="main-page-section welcome-section">
-        <MovingCross
+        <MovingCrossViolet
           index="violet-cross-1"
           color="./public/images/VioletCross.svg"
         />
-        <MovingCross
-          index="violet-cross-2"
+        <MovingCrossYellow
+          index="yellow-cross-1"
           color="./public/images/YellowCross.svg"
         />
         <div className="welcome-bloc">
           <h1 ref={titleRef}>
             Bienvenue sur mon<br></br>
-            <span id="portfolio-title">PORTFOLIO❗</span>
+            <span ref={spanRef} id="portfolio-title">PORTFOLIO</span>
           </h1>
 
           <Button

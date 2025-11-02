@@ -1,19 +1,19 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
-function MovingCross({ color, index }) {
+function MovingCrossViolet({ color, index }) {
   const crossRef = useRef(null);
 
   useEffect(() => {
     gsap
       .timeline()
       .fromTo(
-        ".moving-cross",
+        ".violet",
         { opacity: 0, scale: 0 },
         { opacity: 1, scale: 1, duration: 1, ease: "power2.out" }
       )
       .fromTo(
-        ".moving-cross",
+        ".violet",
         {
           rotation: 0,
         },
@@ -23,7 +23,7 @@ function MovingCross({ color, index }) {
       .timeScale(1);
   });
 
-  return <img id={index} ref={crossRef} className="moving-cross" src={color} />;
+  return <img id={index} ref={crossRef} className="moving-cross violet" src={color} />;
 }
 
-export default MovingCross;
+export default MovingCrossViolet;

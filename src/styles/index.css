@@ -13,6 +13,12 @@ html{
     font-style: normal;
 }
 
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 @media (prefers-color-scheme: dark){
   body{
     background: var(--dark-color);

@@ -23,7 +23,7 @@ function MovingCross({ color, index }) {
       .timeScale(1);
   });
 
-  return <img data-index={index} ref={crossRef} className="moving-cross" src={color} />;
+  return <img id={index} ref={crossRef} className="moving-cross" src={color} />;
 }
 
 export default MovingCross;

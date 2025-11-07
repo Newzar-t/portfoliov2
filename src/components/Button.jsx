@@ -7,6 +7,8 @@ function Button({ path, classType, text }) {
    window.location = {path}
   }
 
+  
+
   return (
     <button className={classType} onClick={handleClick}>
       ► {text}

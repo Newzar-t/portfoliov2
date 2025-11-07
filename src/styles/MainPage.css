@@ -1,16 +1,15 @@
 :root {
-    --main-color: #352BC0;
-    --second-color: #F2D179;
-    --light-color: white;
-    --dark-color: #0B0B0B;
+  --main-color: #352bc0;
+  --second-color: #f2d179;
+  --light-color: white;
+  --dark-color: #0b0b0b;
 }
 
-html{
-  font-size: 18px;
-  font-family: "JetBrains Mono",
-    monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
+html {
+  font-size: 20px;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .welcome-section {
@@ -39,28 +38,48 @@ html{
   right: -20%;
 }
 
-.welcome-bloc{
-    width:40%;
-    display:flex;
-    flex-direction:column;
-    flex-wrap:wrap;
-    row-gap:1.5rem;
+.welcome-bloc {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.welcome-bloc h1{
-    font-size:1.2rem;
-
+.welcome-bloc-left {
+  margin-top: 5%;
+  width: 40%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 
-.welcome-bloc span{
-   font-size:2rem;
+#welcome-bloc-text {
+  font-size: 1.2rem;
+  color: var(--second-color);
+}
+
+#portfolio-title {
+  position: relative;
+  top: 1rem;
+  font-size: 4rem;
+  text-shadow: -0.2rem 0.5rem 0px var(--main-color);
+}
+
+.button-bloc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  row-gap: 0.8rem;
 }
 
 .button-type {
+  position: relative;
   width: 9rem;
   height: 2.1rem;
   border-radius: 8rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .button-type-1 {
@@ -70,13 +89,38 @@ html{
 }
 
 .button-type-2 {
+  transform: rotateZ(-5deg);
+  left: 4rem;
   background: var(--main-color);
   border: solid 0.15rem var(--light-color);
   color: var(--light-color);
 }
 
 .button-type-3 {
+  transform: rotateZ(5deg);
   background: none;
   border: solid 0.15rem var(--second-color);
-  color:var(--second-color);
+  color: var(--second-color);
+}
+
+@media (prefers-color-scheme: light) {
+  #welcome-bloc-text {
+    color: var(--dark-color);
+  }
+
+  .button-type-1 {
+    border: solid 0.15rem var(--dark-color);
+    color: var(--dark-color);
+  }
+
+  .button-type-2 {
+    background: var(--main-color);
+    border: solid 0.15rem var(--second-color);
+    color: var(--second-color);
+  }
+
+  .button-type-3 {
+    border: solid 0.15rem var(--main-color);
+    color: var(--main-color);
+  }
 }
